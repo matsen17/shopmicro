@@ -9,7 +9,7 @@ namespace Catalog.API.Data
         {
             var isProductExist = productCollection.Find(s => true).Any();
 
-            if (isProductExist)
+            if (!isProductExist)
             {
                 productCollection.InsertManyAsync(GetSeedProducts());
             }
